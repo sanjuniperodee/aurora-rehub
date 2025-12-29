@@ -4,57 +4,28 @@ import { useEffect, useRef, useState } from 'react';
 
 const benefits = [
   { 
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        {/* Gift/Free - бесплатно */}
-        <rect x="3" y="8" width="18" height="13" rx="2"/>
-        <path d="M12 8V21"/>
-        <path d="M3 12H21"/>
-        <path d="M19 8C19 6 17 4 15 4C13 4 12 6 12 8"/>
-        <path d="M5 8C5 6 7 4 9 4C11 4 12 6 12 8"/>
-      </svg>
-    ),
+    icon: (<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>), 
     title: 'Бесплатное лечение', 
-    desc: 'Полная программа реабилитации без затрат',
-    color: '#ef4444',
+    description: 'Полный курс реабилитации без оплаты', 
+    color: '#3b82f6' 
   },
   { 
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        {/* Video camera - media */}
-        <path d="M15 10L19.5 7.5C20 7.2 21 7.5 21 8V16C21 16.5 20 16.8 19.5 16.5L15 14"/>
-        <rect x="3" y="7" width="12" height="10" rx="2"/>
-      </svg>
-    ),
-    title: 'Вдохновение', 
-    desc: 'Ваша история поможет тысячам людей',
-    color: '#f59e0b',
+    icon: (<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>), 
+    title: 'Медиа-участие', 
+    description: 'Вдохновляете других своей историей', 
+    color: '#ef4444' 
   },
   { 
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        {/* Team/Support */}
-        <circle cx="9" cy="7" r="3"/>
-        <path d="M9 10C5 10 3 13 3 15V17H15V15C15 13 13 10 9 10Z"/>
-        <circle cx="17" cy="8" r="2"/>
-        <path d="M21 17V15.5C21 14 19.5 12.5 17 12.5"/>
-      </svg>
-    ),
-    title: 'Полная поддержка', 
-    desc: 'Команда рядом на каждом этапе пути',
-    color: '#10b981',
+    icon: (<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>), 
+    title: 'Поддержка команды', 
+    description: 'Полное сопровождение специалистов', 
+    color: '#10b981' 
   },
   { 
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        {/* Shield with check - control/privacy */}
-        <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z"/>
-        <path d="M9 12L11 14L15 10"/>
-      </svg>
-    ),
-    title: 'Контроль', 
-    desc: 'Вы контролируете что и когда публиковать',
-    color: '#8b5cf6',
+    icon: (<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>), 
+    title: 'Ваш контроль', 
+    description: 'Согласовываем все публикации', 
+    color: '#8b5cf6' 
   },
 ];
 
@@ -64,272 +35,77 @@ export default function SocialProject() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      id="social"
-      style={{
-        position: 'relative',
-        padding: '0 0 120px 0',
-        background: 'linear-gradient(180deg, #ffffff 0%, #0f172a 15%, #0f172a 100%)',
-        overflow: 'hidden',
-      }}
-    >
-      {/* Smooth gradient transition at top */}
-      <div
-        style={{
-          height: '200px',
-          background: 'linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.8) 30%, rgba(15, 23, 42, 0.2) 70%, #0f172a 100%)',
-          marginBottom: '-80px',
-        }}
-      />
+    <section ref={sectionRef} id="social" className="social-section">
+      <div className="social-orb social-orb-1" />
+      <div className="social-orb social-orb-2" />
 
-      {/* Decorative background */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '200px',
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
-          `,
-          backgroundSize: '80px 80px',
-          pointerEvents: 'none',
-        }}
-      />
-
-      {/* Gradient orbs */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '30%',
-          right: '-10%',
-          width: '600px',
-          height: '600px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, transparent 60%)',
-          filter: 'blur(60px)',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '10%',
-          left: '-10%',
-          width: '500px',
-          height: '500px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 60%)',
-          filter: 'blur(60px)',
-        }}
-      />
-
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px', position: 'relative' }}>
-        {/* Section header */}
+      <div className="social-container">
         <div
+          className="social-content"
           style={{
-            textAlign: 'center',
-            maxWidth: '700px',
-            margin: '0 auto 72px',
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
             transition: 'all 0.6s ease-out',
           }}
         >
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '8px 16px',
-              background: 'rgba(239, 68, 68, 0.15)',
-              borderRadius: '100px',
-              border: '1px solid rgba(239, 68, 68, 0.2)',
-              fontSize: '14px',
-              fontWeight: 600,
-              color: '#fca5a5',
-              marginBottom: '24px',
-            }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fca5a5" stroke="none">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          <span className="social-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z"/>
             </svg>
             Социальный проект
           </span>
-
-          <h2
-            style={{
-              fontSize: 'clamp(36px, 5vw, 52px)',
-              fontWeight: 800,
-              color: '#ffffff',
-              letterSpacing: '-0.03em',
-              marginBottom: '20px',
-            }}
-          >
-            Путь к{' '}
-            <span style={{ 
-              background: 'linear-gradient(135deg, #ef4444 0%, #f97316 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
-              свободе
-            </span>
+          <h2 className="social-title">
+            Второй шанс — <span className="social-title-gradient">бесплатно</span>
           </h2>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>
-            Уникальная программа бесплатной реабилитации. Ваша история вдохновит других.
+          <p className="social-subtitle">
+            Уникальная возможность пройти полный курс реабилитации бесплатно.
+            Мы публикуем вашу историю выздоровления, чтобы вдохновить других.
           </p>
         </div>
 
+        <div className="social-grid">
+          {benefits.map((benefit, i) => (
+            <div
+              key={i}
+              className="social-card"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `all 0.5s ease-out ${0.15 + i * 0.08}s`,
+              }}
+            >
+              <div className="social-icon" style={{ background: `linear-gradient(135deg, ${benefit.color}20 0%, ${benefit.color}30 100%)`, color: benefit.color }}>
+                {benefit.icon}
+              </div>
+              <h3 className="social-card-title">{benefit.title}</h3>
+              <p className="social-card-desc">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+
         <div
+          className="social-cta"
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '48px',
-            alignItems: 'center',
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'all 0.5s ease-out 0.5s',
           }}
         >
-          {/* Left - Benefits */}
-          <div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              {benefits.map((benefit, i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: '28px',
-                    background: 'rgba(255,255,255,0.05)',
-                    borderRadius: '20px',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    backdropFilter: 'blur(10px)',
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                    transition: 'all 0.5s ease-out',
-                    transitionDelay: `${0.1 + i * 0.05}s`,
-                  }}
-                >
-                  <div 
-                    style={{ 
-                      width: '56px',
-                      height: '56px',
-                      borderRadius: '16px',
-                      background: `linear-gradient(135deg, ${benefit.color}25 0%, ${benefit.color}15 100%)`,
-                      color: benefit.color,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '16px',
-                    }}
-                  >
-                    {benefit.icon}
-                  </div>
-                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
-                    {benefit.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>
-                    {benefit.desc}
-                  </p>
-                </div>
-              ))}
+          <div className="social-cta-box">
+            <div className="social-cta-text">
+              <span className="social-cta-label">Готовы изменить свою жизнь?</span>
+              <span className="social-cta-title">Подайте заявку на участие в проекте</span>
             </div>
-          </div>
-
-          {/* Right - CTA Card */}
-          <div
-            style={{
-              padding: '48px',
-              background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(249, 115, 22, 0.15) 100%)',
-              borderRadius: '32px',
-              border: '1px solid rgba(239, 68, 68, 0.2)',
-              backdropFilter: 'blur(20px)',
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
-              transition: 'all 0.6s ease-out 0.2s',
-            }}
-          >
-            <div
-              style={{
-                width: '72px',
-                height: '72px',
-                borderRadius: '20px',
-                background: 'linear-gradient(135deg, #ef4444 0%, #f97316 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '28px',
-                boxShadow: '0 12px 32px rgba(239, 68, 68, 0.4)',
-              }}
-            >
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                {/* Play button */}
-                <circle cx="12" cy="12" r="10"/>
-                <polygon points="10 8 16 12 10 16 10 8" fill="#ffffff" stroke="none"/>
-              </svg>
-            </div>
-
-            <h3 style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', marginBottom: '16px', letterSpacing: '-0.02em' }}>
-              Станьте частью истории
-            </h3>
-            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginBottom: '28px' }}>
-              Мы документируем путь восстановления с вашего согласия. 
-              Ваша история публикуется в медиа и вдохновляет других сделать первый шаг.
-            </p>
-
-            {/* Stats */}
-            <div
-              style={{
-                display: 'flex',
-                gap: '40px',
-                marginBottom: '28px',
-                paddingBottom: '28px',
-                borderBottom: '1px solid rgba(255,255,255,0.1)',
-              }}
-            >
-              <div>
-                <div style={{ fontSize: '36px', fontWeight: 800, color: '#ffffff' }}>50+</div>
-                <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>Участников</div>
-              </div>
-              <div>
-                <div style={{ fontSize: '36px', fontWeight: 800, color: '#ffffff' }}>1M+</div>
-                <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>Просмотров</div>
-              </div>
-            </div>
-
-            <a
-              href="#contact"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '12px',
-                width: '100%',
-                padding: '18px 32px',
-                background: 'linear-gradient(135deg, #ef4444 0%, #f97316 100%)',
-                color: '#ffffff',
-                fontSize: '17px',
-                fontWeight: 600,
-                borderRadius: '14px',
-                textDecoration: 'none',
-                boxShadow: '0 12px 32px rgba(239, 68, 68, 0.4)',
-              }}
-            >
-              Участвовать в проекте
+            <a href="#contact" className="social-cta-btn">
+              Подать заявку
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -339,15 +115,52 @@ export default function SocialProject() {
       </div>
 
       <style jsx>{`
-        @media (max-width: 900px) {
-          section > div:last-child > div:last-child {
-            grid-template-columns: 1fr !important;
-          }
+        .social-section { position: relative; padding: 100px 0; background: linear-gradient(180deg, #f8fafc 0%, #0f172a 100%); overflow: hidden; }
+        .social-orb { position: absolute; border-radius: 50%; filter: blur(80px); }
+        .social-orb-1 { top: 20%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%); }
+        .social-orb-2 { bottom: 10%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%); }
+        .social-container { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; }
+        .social-content { text-align: center; max-width: 750px; margin: 0 auto 60px; }
+        .social-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%); border-radius: 100px; border: 1px solid rgba(239, 68, 68, 0.2); font-size: 14px; font-weight: 600; color: #ef4444; margin-bottom: 24px; }
+        .social-title { font-size: clamp(32px, 5vw, 52px); font-weight: 800; color: #0f172a; letter-spacing: -0.03em; margin-bottom: 20px; }
+        .social-title-gradient { background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .social-subtitle { font-size: 17px; color: #475569; line-height: 1.8; }
+        .social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
+        .social-card { padding: 28px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(226, 232, 240, 0.5); text-align: center; transition: all 0.3s ease; }
+        .social-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .social-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+        .social-card-title { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+        .social-card-desc { font-size: 13px; color: #64748b; line-height: 1.5; }
+        .social-cta { text-align: center; }
+        .social-cta-box { display: inline-flex; align-items: center; gap: 32px; padding: 24px 36px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(226, 232, 240, 0.5); box-shadow: 0 20px 50px rgba(0,0,0,0.15); flex-wrap: wrap; justify-content: center; }
+        .social-cta-text { text-align: left; }
+        .social-cta-label { display: block; font-size: 13px; color: #64748b; margin-bottom: 4px; }
+        .social-cta-title { font-size: 18px; font-weight: 700; color: #0f172a; }
+        .social-cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%); color: #ffffff; font-size: 15px; font-weight: 600; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.35); transition: all 0.3s ease; }
+        .social-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(239, 68, 68, 0.45); }
+        
+        @media (max-width: 1000px) {
+          .social-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 600px) {
-          section > div:last-child > div:last-child > div:first-child {
-            grid-template-columns: 1fr !important;
-          }
+        
+        @media (max-width: 640px) {
+          .social-section { padding: 60px 0; }
+          .social-container { padding: 0 20px; }
+          .social-content { margin-bottom: 40px; }
+          .social-badge { padding: 6px 12px; font-size: 12px; margin-bottom: 16px; }
+          .social-title { font-size: 28px; margin-bottom: 14px; }
+          .social-subtitle { font-size: 15px; }
+          .social-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 32px; }
+          .social-card { padding: 22px; border-radius: 16px; }
+          .social-icon { width: 52px; height: 52px; border-radius: 14px; margin-bottom: 12px; }
+          .social-card-title { font-size: 15px; margin-bottom: 6px; }
+          .social-card-desc { font-size: 12px; }
+          .social-cta-box { flex-direction: column; gap: 18px; padding: 24px; width: 100%; text-align: center; }
+          .social-cta-text { text-align: center; }
+          .social-cta-label { font-size: 12px; }
+          .social-cta-title { font-size: 16px; }
+          .social-cta-btn { width: 100%; justify-content: center; padding: 14px 24px; font-size: 14px; }
+          .social-orb { width: 250px; height: 250px; }
         }
       `}</style>
     </section>

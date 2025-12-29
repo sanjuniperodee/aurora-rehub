@@ -23,115 +23,32 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        padding: '16px 24px',
-        transition: 'all 0.3s ease',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '12px 24px',
-          background: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          borderRadius: '16px',
-          border: isScrolled ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.1)',
-          boxShadow: isScrolled ? '0 4px 20px rgba(0, 0, 0, 0.08)' : 'none',
-          transition: 'all 0.3s ease',
-        }}
-      >
+    <header className="header">
+      <div className={`header-inner ${isScrolled ? 'scrolled' : ''}`}>
         {/* Logo */}
-        <a
-          href="#"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            textDecoration: 'none',
-          }}
-        >
-          <div
-            style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '10px',
-              background: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
+        <a href="#" className="header-logo">
+          <div className="header-logo-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2">
               <path d="M12 2L2 7l10 5 10-5-10-5z"/>
               <path d="M2 17l10 5 10-5"/>
               <path d="M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <span
-            style={{
-              fontSize: '18px',
-              fontWeight: 700,
-              color: isScrolled ? '#111827' : '#ffffff',
-              transition: 'color 0.3s ease',
-            }}
-          >
-            Avrora Nomad
-          </span>
+          <span className={`header-logo-text ${isScrolled ? 'scrolled' : ''}`}>Avrora Nomad</span>
         </a>
 
         {/* Desktop navigation */}
-        <nav
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-          }}
-          className="desktop-nav"
-        >
+        <nav className="desktop-nav">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              style={{
-                padding: '8px 16px',
-                fontSize: '14px',
-                fontWeight: 500,
-                color: isScrolled ? '#374151' : 'rgba(255, 255, 255, 0.9)',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                transition: 'all 0.2s ease',
-              }}
+              className={`nav-link ${isScrolled ? 'scrolled' : ''}`}
             >
               {link.name}
             </a>
           ))}
-          <a
-            href="tel:+77053505988"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '10px 20px',
-              background: '#3b82f6',
-              color: '#ffffff',
-              fontSize: '14px',
-              fontWeight: 600,
-              borderRadius: '10px',
-              textDecoration: 'none',
-              marginLeft: '8px',
-            }}
-          >
+          <a href="tel:+77053505988" className="nav-cta">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
@@ -142,15 +59,7 @@ export default function Header() {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          style={{
-            display: 'none',
-            padding: '8px',
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            color: isScrolled ? '#111827' : '#ffffff',
-          }}
-          className="mobile-menu-btn"
+          className={`mobile-menu-btn ${isScrolled ? 'scrolled' : ''}`}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {isMobileMenuOpen ? (
@@ -164,57 +73,19 @@ export default function Header() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '100%',
-            left: '24px',
-            right: '24px',
-            marginTop: '8px',
-            padding: '16px',
-            background: 'rgba(255, 255, 255, 0.98)',
-            backdropFilter: 'blur(12px)',
-            borderRadius: '16px',
-            border: '1px solid rgba(0, 0, 0, 0.08)',
-            boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
-          }}
-          className="mobile-menu"
-        >
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <div className="mobile-menu">
+          <nav className="mobile-nav">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                style={{
-                  padding: '12px 16px',
-                  fontSize: '15px',
-                  fontWeight: 500,
-                  color: '#374151',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                }}
+                className="mobile-nav-link"
               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="tel:+77053505988"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-                padding: '14px 20px',
-                marginTop: '8px',
-                background: '#3b82f6',
-                color: '#ffffff',
-                fontSize: '15px',
-                fontWeight: 600,
-                borderRadius: '10px',
-                textDecoration: 'none',
-              }}
-            >
+            <a href="tel:+77053505988" className="mobile-nav-cta">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
@@ -225,12 +96,201 @@ export default function Header() {
       )}
 
       <style jsx>{`
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          padding: 16px 24px;
+          transition: all 0.3s ease;
+        }
+        .header-inner {
+          max-width: 1400px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px 24px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-radius: 16px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+        }
+        .header-inner.scrolled {
+          background: rgba(255, 255, 255, 0.95);
+          border-color: rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .header-logo {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          text-decoration: none;
+        }
+        .header-logo-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+          background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .header-logo-text {
+          font-size: 18px;
+          font-weight: 700;
+          color: #ffffff;
+          transition: color 0.3s ease;
+        }
+        .header-logo-text.scrolled {
+          color: #111827;
+        }
+        .desktop-nav {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .nav-link {
+          padding: 8px 16px;
+          font-size: 14px;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: none;
+          border-radius: 8px;
+          transition: all 0.2s ease;
+        }
+        .nav-link.scrolled {
+          color: #374151;
+        }
+        .nav-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+        .nav-link.scrolled:hover {
+          background: rgba(0, 0, 0, 0.05);
+        }
+        .nav-cta {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          background: #3b82f6;
+          color: #ffffff;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 10px;
+          text-decoration: none;
+          margin-left: 8px;
+          transition: all 0.3s ease;
+        }
+        .nav-cta:hover {
+          background: #2563eb;
+          transform: translateY(-1px);
+        }
+        .mobile-menu-btn {
+          display: none;
+          padding: 8px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          color: #ffffff;
+        }
+        .mobile-menu-btn.scrolled {
+          color: #111827;
+        }
+        .mobile-menu {
+          position: absolute;
+          top: 100%;
+          left: 16px;
+          right: 16px;
+          margin-top: 8px;
+          padding: 16px;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(12px);
+          border-radius: 16px;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        .mobile-nav {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .mobile-nav-link {
+          padding: 12px 16px;
+          font-size: 15px;
+          font-weight: 500;
+          color: #374151;
+          text-decoration: none;
+          border-radius: 8px;
+          transition: background 0.2s ease;
+        }
+        .mobile-nav-link:hover {
+          background: #f3f4f6;
+        }
+        .mobile-nav-cta {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 14px 20px;
+          margin-top: 8px;
+          background: #3b82f6;
+          color: #ffffff;
+          font-size: 15px;
+          font-weight: 600;
+          border-radius: 10px;
+          text-decoration: none;
+        }
+        
         @media (max-width: 900px) {
           .desktop-nav {
             display: none !important;
           }
           .mobile-menu-btn {
             display: block !important;
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .header {
+            padding: 12px 16px;
+          }
+          .header-inner {
+            padding: 10px 16px;
+            border-radius: 14px;
+          }
+          .header-logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+          }
+          .header-logo-icon svg {
+            width: 18px;
+            height: 18px;
+          }
+          .header-logo-text {
+            font-size: 16px;
+          }
+          .header-logo {
+            gap: 10px;
+          }
+          .mobile-menu {
+            left: 12px;
+            right: 12px;
+            padding: 14px;
+            border-radius: 14px;
+          }
+          .mobile-nav-link {
+            padding: 10px 14px;
+            font-size: 14px;
+          }
+          .mobile-nav-cta {
+            padding: 12px 18px;
+            font-size: 14px;
           }
         }
       `}</style>
