@@ -464,19 +464,24 @@ export default function Services() {
             font-size: 15px;
           }
           .services-tabs {
+            flex-direction: column;
             gap: 8px;
             margin-bottom: 24px;
           }
           .services-tab {
-            padding: 10px 14px;
-            font-size: 12px;
-            border-radius: 10px;
-            flex: 1;
-            min-width: 0;
-            justify-content: center;
+            padding: 14px 18px;
+            font-size: 14px;
+            border-radius: 12px;
+            width: 100%;
+            justify-content: flex-start;
           }
           .services-tab svg {
-            display: none;
+            width: 22px;
+            height: 22px;
+          }
+          .services-tab-text {
+            white-space: normal;
+            text-align: left;
           }
           .services-content {
             padding: 20px;
