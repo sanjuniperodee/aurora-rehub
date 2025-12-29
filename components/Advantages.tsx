@@ -11,7 +11,7 @@ const advantages = [
       </svg>
     ),
     title: 'Открытая модель',
-    description: 'Без принуждения и давления. Человек сам принимает решение измениться и работает над собой.',
+    description: 'Без принуждения и давления. Человек сам принимает решение измениться.',
     accent: '#10b981',
   },
   {
@@ -23,7 +23,7 @@ const advantages = [
       </svg>
     ),
     title: 'Семейные программы',
-    description: 'Работаем не только с резидентом, но и с его близкими. Семья — важная часть выздоровления.',
+    description: 'Работаем не только с резидентом, но и с его близкими.',
     accent: '#8b5cf6',
   },
   {
@@ -33,7 +33,7 @@ const advantages = [
       </svg>
     ),
     title: 'Углублённая психотерапия',
-    description: 'Не снимаем симптомы — формируем зрелую личность, готовую к новым жизненным этапам.',
+    description: 'Формируем зрелую личность, готовую к новым жизненным этапам.',
     accent: '#f59e0b',
   },
   {
@@ -44,7 +44,7 @@ const advantages = [
       </svg>
     ),
     title: 'Социальная адаптация',
-    description: 'Трудотерапия, мастер-классы, профессиональная ориентация — готовим к реальной жизни.',
+    description: 'Трудотерапия, мастер-классы, профессиональная ориентация.',
     accent: '#3b82f6',
   },
   {
@@ -56,7 +56,7 @@ const advantages = [
       </svg>
     ),
     title: 'Образовательные тренинги',
-    description: 'Развитие навыков и знаний для успешной самостоятельной жизни после реабилитации.',
+    description: 'Развитие навыков для успешной самостоятельной жизни.',
     accent: '#ec4899',
   },
   {
@@ -69,7 +69,7 @@ const advantages = [
       </svg>
     ),
     title: 'Уверенность в себе',
-    description: 'Выпускники уходят не только трезвыми, но и уверенными, с планами на будущее.',
+    description: 'Выпускники уходят трезвыми и уверенными, с планами.',
     accent: '#06b6d4',
   },
 ];
@@ -97,183 +97,263 @@ export default function Advantages() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      id="advantages"
-      style={{
-        position: 'relative',
-        padding: '120px 0',
-        background: 'linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)',
-        overflow: 'hidden',
-      }}
-    >
+    <section ref={sectionRef} id="advantages" className="advantages-section">
       {/* Decorative dots pattern */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.07) 1px, transparent 0)',
-          backgroundSize: '40px 40px',
-          pointerEvents: 'none',
-        }}
-      />
+      <div className="advantages-pattern" />
 
       {/* Gradient orbs */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '10%',
-          left: '-5%',
-          width: '400px',
-          height: '400px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '10%',
-          right: '-5%',
-          width: '500px',
-          height: '500px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
+      <div className="advantages-orb advantages-orb-1" />
+      <div className="advantages-orb advantages-orb-2" />
 
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 32px', position: 'relative' }}>
+      <div className="advantages-container">
         {/* Section header */}
         <div
+          className="advantages-header"
           style={{
-            textAlign: 'center',
-            maxWidth: '700px',
-            margin: '0 auto 72px',
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
             transition: 'all 0.6s ease-out',
           }}
         >
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '8px 16px',
-              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)',
-              borderRadius: '100px',
-              border: '1px solid rgba(16, 185, 129, 0.2)',
-              fontSize: '14px',
-              fontWeight: 600,
-              color: '#10b981',
-              marginBottom: '24px',
-            }}
-          >
+          <span className="advantages-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
             Наши преимущества
           </span>
 
-          <h2
-            style={{
-              fontSize: 'clamp(36px, 5vw, 52px)',
-              fontWeight: 800,
-              color: '#0f172a',
-              letterSpacing: '-0.03em',
-              marginBottom: '20px',
-            }}
-          >
+          <h2 className="advantages-title">
             Почему выбирают{' '}
-            <span style={{ 
-              background: 'linear-gradient(135deg, #10b981 0%, #3b82f6 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
-              нас
-            </span>
+            <span className="advantages-title-gradient">нас</span>
           </h2>
-          <p style={{ fontSize: '18px', color: '#64748b', lineHeight: 1.7 }}>
-            Мы создали уникальную модель реабилитации с комплексным подходом к восстановлению
+          <p className="advantages-subtitle">
+            Уникальная модель реабилитации с комплексным подходом к восстановлению
           </p>
         </div>
 
         {/* Advantages grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '24px',
-          }}
-        >
+        <div className="advantages-grid">
           {advantages.map((advantage, i) => (
             <div
               key={i}
+              className="advantages-card"
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
               style={{
-                padding: '36px',
                 background: hoveredIndex === i ? '#ffffff' : 'rgba(255,255,255,0.7)',
-                borderRadius: '24px',
-                border: `1px solid ${hoveredIndex === i ? advantage.accent + '40' : '#e2e8f0'}`,
+                borderColor: hoveredIndex === i ? advantage.accent + '40' : '#e2e8f0',
                 boxShadow: hoveredIndex === i 
                   ? `0 20px 40px ${advantage.accent}20`
                   : '0 4px 20px rgba(0, 0, 0, 0.03)',
-                transition: 'all 0.3s ease',
-                cursor: 'pointer',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible 
                   ? hoveredIndex === i ? 'translateY(-8px)' : 'translateY(0)'
                   : 'translateY(30px)',
+                transition: `all 0.3s ease`,
                 transitionDelay: `${0.05 + i * 0.05}s`,
               }}
             >
               <div
+                className="advantages-card-icon"
                 style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '18px',
                   background: `linear-gradient(135deg, ${advantage.accent}15 0%, ${advantage.accent}25 100%)`,
                   color: advantage.accent,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '24px',
-                  transition: 'all 0.3s ease',
                   transform: hoveredIndex === i ? 'scale(1.1)' : 'scale(1)',
                 }}
               >
                 {advantage.icon}
               </div>
-              <h3
-                style={{
-                  fontSize: '20px',
-                  fontWeight: 700,
-                  color: '#0f172a',
-                  marginBottom: '12px',
-                }}
-              >
-                {advantage.title}
-              </h3>
-              <p style={{ fontSize: '15px', color: '#64748b', lineHeight: 1.7 }}>
-                {advantage.description}
-              </p>
+              <h3 className="advantages-card-title">{advantage.title}</h3>
+              <p className="advantages-card-text">{advantage.description}</p>
             </div>
           ))}
         </div>
       </div>
 
       <style jsx>{`
+        .advantages-section {
+          position: relative;
+          padding: 100px 0;
+          background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+          overflow: hidden;
+        }
+        
+        .advantages-pattern {
+          position: absolute;
+          inset: 0;
+          background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.07) 1px, transparent 0);
+          background-size: 40px 40px;
+          pointer-events: none;
+        }
+        
+        .advantages-orb {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(40px);
+        }
+        
+        .advantages-orb-1 {
+          top: 10%;
+          left: -5%;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+        }
+        
+        .advantages-orb-2 {
+          bottom: 10%;
+          right: -5%;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+        }
+        
+        .advantages-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 32px;
+          position: relative;
+        }
+        
+        .advantages-header {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto 60px;
+        }
+        
+        .advantages-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 16px;
+          background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+          border-radius: 100px;
+          border: 1px solid rgba(16, 185, 129, 0.2);
+          font-size: 14px;
+          font-weight: 600;
+          color: #10b981;
+          margin-bottom: 24px;
+        }
+        
+        .advantages-title {
+          font-size: clamp(32px, 5vw, 52px);
+          font-weight: 800;
+          color: #0f172a;
+          letter-spacing: -0.03em;
+          margin-bottom: 16px;
+        }
+        
+        .advantages-title-gradient {
+          background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        
+        .advantages-subtitle {
+          font-size: 17px;
+          color: #64748b;
+          line-height: 1.7;
+        }
+        
+        .advantages-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        
+        .advantages-card {
+          padding: 28px;
+          border-radius: 20px;
+          border: 1px solid #e2e8f0;
+          cursor: pointer;
+        }
+        
+        .advantages-card-icon {
+          width: 56px;
+          height: 56px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px;
+          transition: transform 0.3s ease;
+        }
+        
+        .advantages-card-title {
+          font-size: 18px;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 10px;
+        }
+        
+        .advantages-card-text {
+          font-size: 14px;
+          color: #64748b;
+          line-height: 1.6;
+        }
+        
+        /* Tablet */
         @media (max-width: 1100px) {
-          section > div > div:last-child {
-            grid-template-columns: repeat(2, 1fr) !important;
+          .advantages-section {
+            padding: 80px 0;
+          }
+          .advantages-container {
+            padding: 0 24px;
+          }
+          .advantages-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
           }
         }
-        @media (max-width: 700px) {
-          section > div > div:last-child {
-            grid-template-columns: 1fr !important;
+        
+        /* Mobile */
+        @media (max-width: 640px) {
+          .advantages-section {
+            padding: 60px 0;
+          }
+          .advantages-container {
+            padding: 0 20px;
+          }
+          .advantages-header {
+            margin-bottom: 40px;
+          }
+          .advantages-badge {
+            padding: 6px 12px;
+            font-size: 12px;
+            margin-bottom: 16px;
+          }
+          .advantages-title {
+            font-size: 28px;
+            margin-bottom: 12px;
+          }
+          .advantages-subtitle {
+            font-size: 15px;
+          }
+          .advantages-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          .advantages-card {
+            padding: 20px;
+            border-radius: 16px;
+          }
+          .advantages-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            margin-bottom: 14px;
+          }
+          .advantages-card-title {
+            font-size: 16px;
+            margin-bottom: 6px;
+          }
+          .advantages-card-text {
+            font-size: 13px;
+          }
+          .advantages-orb-1,
+          .advantages-orb-2 {
+            width: 200px;
+            height: 200px;
           }
         }
       `}</style>
