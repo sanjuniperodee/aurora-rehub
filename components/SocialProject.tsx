@@ -5,8 +5,13 @@ import { useEffect, useRef, useState } from 'react';
 const benefits = [
   { 
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {/* Gift/Free - бесплатно */}
+        <rect x="3" y="8" width="18" height="13" rx="2"/>
+        <path d="M12 8V21"/>
+        <path d="M3 12H21"/>
+        <path d="M19 8C19 6 17 4 15 4C13 4 12 6 12 8"/>
+        <path d="M5 8C5 6 7 4 9 4C11 4 12 6 12 8"/>
       </svg>
     ),
     title: 'Бесплатное лечение', 
@@ -15,8 +20,10 @@ const benefits = [
   },
   { 
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {/* Video camera - media */}
+        <path d="M15 10L19.5 7.5C20 7.2 21 7.5 21 8V16C21 16.5 20 16.8 19.5 16.5L15 14"/>
+        <rect x="3" y="7" width="12" height="10" rx="2"/>
       </svg>
     ),
     title: 'Вдохновение', 
@@ -25,10 +32,12 @@ const benefits = [
   },
   { 
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {/* Team/Support */}
+        <circle cx="9" cy="7" r="3"/>
+        <path d="M9 10C5 10 3 13 3 15V17H15V15C15 13 13 10 9 10Z"/>
+        <circle cx="17" cy="8" r="2"/>
+        <path d="M21 17V15.5C21 14 19.5 12.5 17 12.5"/>
       </svg>
     ),
     title: 'Полная поддержка', 
@@ -37,9 +46,10 @@ const benefits = [
   },
   { 
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {/* Shield with check - control/privacy */}
+        <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z"/>
+        <path d="M9 12L11 14L15 10"/>
       </svg>
     ),
     title: 'Контроль', 
@@ -75,35 +85,28 @@ export default function SocialProject() {
       id="social"
       style={{
         position: 'relative',
-        padding: '120px 0',
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)',
+        padding: '0 0 120px 0',
+        background: 'linear-gradient(180deg, #ffffff 0%, #0f172a 15%, #0f172a 100%)',
         overflow: 'hidden',
       }}
     >
-      {/* Wave transition from light section */}
-      <svg
+      {/* Smooth gradient transition at top */}
+      <div
         style={{
-          position: 'absolute',
-          top: '-1px',
-          left: 0,
-          width: '100%',
-          height: '80px',
+          height: '200px',
+          background: 'linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.8) 30%, rgba(15, 23, 42, 0.2) 70%, #0f172a 100%)',
+          marginBottom: '-80px',
         }}
-        viewBox="0 0 1440 80"
-        fill="none"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z"
-          fill="#ffffff"
-        />
-      </svg>
+      />
 
       {/* Decorative background */}
       <div
         style={{
           position: 'absolute',
-          inset: 0,
+          top: '200px',
+          left: 0,
+          right: 0,
+          bottom: 0,
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
@@ -117,7 +120,7 @@ export default function SocialProject() {
       <div
         style={{
           position: 'absolute',
-          top: '10%',
+          top: '30%',
           right: '-10%',
           width: '600px',
           height: '600px',
@@ -214,6 +217,7 @@ export default function SocialProject() {
                     background: 'rgba(255,255,255,0.05)',
                     borderRadius: '20px',
                     border: '1px solid rgba(255,255,255,0.08)',
+                    backdropFilter: 'blur(10px)',
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                     transition: 'all 0.5s ease-out',
@@ -222,9 +226,9 @@ export default function SocialProject() {
                 >
                   <div 
                     style={{ 
-                      width: '52px',
-                      height: '52px',
-                      borderRadius: '14px',
+                      width: '56px',
+                      height: '56px',
+                      borderRadius: '16px',
                       background: `linear-gradient(135deg, ${benefit.color}25 0%, ${benefit.color}15 100%)`,
                       color: benefit.color,
                       display: 'flex',
@@ -253,6 +257,7 @@ export default function SocialProject() {
               background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(249, 115, 22, 0.15) 100%)',
               borderRadius: '32px',
               border: '1px solid rgba(239, 68, 68, 0.2)',
+              backdropFilter: 'blur(20px)',
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
               transition: 'all 0.6s ease-out 0.2s',
@@ -271,7 +276,8 @@ export default function SocialProject() {
                 boxShadow: '0 12px 32px rgba(239, 68, 68, 0.4)',
               }}
             >
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                {/* Play button */}
                 <circle cx="12" cy="12" r="10"/>
                 <polygon points="10 8 16 12 10 16 10 8" fill="#ffffff" stroke="none"/>
               </svg>
@@ -334,12 +340,12 @@ export default function SocialProject() {
 
       <style jsx>{`
         @media (max-width: 900px) {
-          section > div:nth-child(5) > div:last-child {
+          section > div:last-child > div:last-child {
             grid-template-columns: 1fr !important;
           }
         }
         @media (max-width: 600px) {
-          section > div:nth-child(5) > div:last-child > div:first-child {
+          section > div:last-child > div:last-child > div:first-child {
             grid-template-columns: 1fr !important;
           }
         }
