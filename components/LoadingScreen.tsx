@@ -83,6 +83,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       stepTimers.forEach(timer => clearTimeout(timer));
       clearTimeout(completeTimer);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onComplete]);
 
   if (!isVisible) return null;
