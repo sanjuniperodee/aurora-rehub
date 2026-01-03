@@ -31,10 +31,10 @@
   --accent: #10b981;
   --accent-light: #d1fae5;
   
-  /* Единый градиент для всего сайта */
-  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
-  --gradient-section: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
-  --gradient-dark: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  /* Единый градиент для всего сайта - бело-голубая палитра */
+  --gradient-hero: linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #bae6fd 100%);
+  --gradient-section: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+  --gradient-dark: linear-gradient(180deg, #1e40af 0%, #3b82f6 100%);
 }
 
 *, *::before, *::after {
@@ -50,12 +50,16 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
   font-size: 17px;
   line-height: 1.6;
   color: var(--gray-700);
   background: var(--white);
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), var(--font-inter), serif;
 }
 
 /* Typography */

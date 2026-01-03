@@ -3,12 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const team = [
-  { name: 'Директор центра', role: 'Руководитель программы', description: 'Координирует работу центра и индивидуальный подход', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>), color: '#3b82f6' },
-  { name: 'Психолог', role: 'Клинический психолог', description: 'Индивидуальная и групповая терапия', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5L14 21h-4l0-11.5C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4z"/><path d="M8 6c-2 0-4 1.5-4 4s2 4 4 4"/><path d="M16 6c2 0 4 1.5 4 4s-2 4-4 4"/></svg>), color: '#8b5cf6' },
-  { name: 'Аддиктолог', role: 'Специалист по зависимостям', description: 'Профессиональное сопровождение и консультации', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>), color: '#ef4444' },
-  { name: 'Нарколог', role: 'Врач-нарколог', description: 'Медицинское наблюдение и лечение', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>), color: '#10b981' },
-  { name: 'Тренер', role: 'Спортивный инструктор', description: 'Физическое восстановление и дисциплина', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 5v14"/><path d="M18 5v14"/><path d="M6 9h12"/><path d="M6 15h12"/><circle cx="3" cy="9" r="2"/><circle cx="21" cy="9" r="2"/><circle cx="3" cy="15" r="2"/><circle cx="21" cy="15" r="2"/></svg>), color: '#f59e0b' },
-  { name: 'Инструктор йоги', role: 'Практик йоги', description: 'Дыхательные практики и медитация', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="5" r="2"/><path d="M4 20l4-9 4 9"/><path d="M12 20l4-9 4 9"/><path d="M8 14h8"/></svg>), color: '#6366f1' },
+  { name: 'Сухраб', role: 'Директор реабилитационного центра Avrora Nomad', description: 'Координирует работу центра и индивидуальный подход', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>), color: '#3b82f6', photo: '/team/suhrab-director.jpg' },
+  { name: 'Нурсултан', role: 'Руководитель программы', description: 'Организует и контролирует реабилитационные программы', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>), color: '#8b5cf6', photo: '/team/nursultan-program-manager.jpg' },
+  { name: 'Светлана', role: 'Клинический психолог', description: 'Индивидуальная и групповая терапия', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5L14 21h-4l0-11.5C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4z"/><path d="M8 6c-2 0-4 1.5-4 4s2 4 4 4"/><path d="M16 6c2 0 4 1.5 4 4s-2 4-4 4"/></svg>), color: '#ef4444', photo: '/team/svetlana-psychologist.jpg' },
+  { name: 'Кайсар', role: 'Специалист по работе с общественностью', description: 'Коммуникации и взаимодействие с общественностью', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>), color: '#10b981', photo: '/team/kaysar-public-relations.png' },
+  { name: 'Баглан', role: 'Кризис менеджер', description: 'Управление кризисными ситуациями и экстренная поддержка', icon: (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>), color: '#f59e0b', photo: '/team/baglan-crisis-manager.png' },
 ];
 
 export default function Team() {
@@ -66,11 +65,25 @@ export default function Team() {
               <div
                 className="team-avatar"
                 style={{
-                  background: `linear-gradient(135deg, ${member.color}15 0%, ${member.color}25 100%)`,
+                  background: member.photo ? 'transparent' : `linear-gradient(135deg, ${member.color}15 0%, ${member.color}25 100%)`,
                   borderColor: `${member.color}30`,
                 }}
               >
-                <div style={{ color: member.color }}>{member.icon}</div>
+                {member.photo ? (
+                  <img 
+                    src={member.photo} 
+                    alt={member.name}
+                    className="team-photo"
+                    onError={(e) => {
+                      // Fallback to icon if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const iconDiv = target.nextElementSibling as HTMLDivElement;
+                      if (iconDiv) iconDiv.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                <div style={{ color: member.color, display: member.photo ? 'none' : 'flex' }}>{member.icon}</div>
               </div>
               <h3 className="team-name">{member.name}</h3>
               <span className="team-role" style={{ background: `${member.color}15`, color: member.color }}>
@@ -123,7 +136,8 @@ export default function Team() {
         .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
         .team-card { padding: 32px 24px; background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s ease; }
         .team-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #cbd5e1; }
-        .team-avatar { width: 72px; height: 72px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; border: 1px solid; }
+        .team-avatar { width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; border: 3px solid; overflow: hidden; position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .team-photo { width: 100%; height: 100%; object-fit: cover; }
         .team-name { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 10px; }
         .team-role { display: inline-block; padding: 5px 12px; font-size: 12px; font-weight: 600; border-radius: 6px; margin-bottom: 14px; }
         .team-desc { font-size: 14px; color: #64748b; line-height: 1.6; }
@@ -149,7 +163,7 @@ export default function Team() {
           .team-subtitle { font-size: 15px; }
           .team-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
           .team-card { padding: 24px 20px; border-radius: 16px; }
-          .team-avatar { width: 60px; height: 60px; border-radius: 16px; margin-bottom: 14px; }
+          .team-avatar { width: 100px; height: 100px; border-radius: 50%; border-width: 2px; margin-bottom: 18px; }
           .team-name { font-size: 16px; margin-bottom: 8px; }
           .team-role { padding: 4px 10px; font-size: 11px; margin-bottom: 10px; }
           .team-desc { font-size: 13px; }

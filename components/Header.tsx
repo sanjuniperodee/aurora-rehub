@@ -112,17 +112,18 @@ export default function Header() {
           align-items: center;
           justify-content: space-between;
           padding: 12px 24px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border-radius: 16px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(59, 130, 246, 0.2);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
           transition: all 0.3s ease;
         }
         .header-inner.scrolled {
-          background: rgba(255, 255, 255, 0.95);
-          border-color: rgba(0, 0, 0, 0.08);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          background: rgba(255, 255, 255, 0.98);
+          border-color: rgba(59, 130, 246, 0.3);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
         .header-logo {
           display: flex;
@@ -140,14 +141,17 @@ export default function Header() {
           justify-content: center;
           flex-shrink: 0;
         }
+        .header-logo-icon svg {
+          stroke: #ffffff;
+        }
         .header-logo-text {
           font-size: 18px;
           font-weight: 700;
-          color: #ffffff;
+          color: #1e40af;
           transition: color 0.3s ease;
         }
         .header-logo-text.scrolled {
-          color: #111827;
+          color: #1e40af;
         }
         .desktop-nav {
           display: flex;
@@ -158,19 +162,21 @@ export default function Header() {
           padding: 8px 16px;
           font-size: 14px;
           font-weight: 500;
-          color: rgba(255, 255, 255, 0.9);
+          color: #475569;
           text-decoration: none;
           border-radius: 8px;
           transition: all 0.2s ease;
         }
         .nav-link.scrolled {
-          color: #374151;
+          color: #475569;
         }
         .nav-link:hover {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(59, 130, 246, 0.1);
+          color: #2563eb;
         }
         .nav-link.scrolled:hover {
-          background: rgba(0, 0, 0, 0.05);
+          background: rgba(59, 130, 246, 0.1);
+          color: #2563eb;
         }
         .nav-cta {
           display: flex;
@@ -196,10 +202,10 @@ export default function Header() {
           background: transparent;
           border: none;
           cursor: pointer;
-          color: #ffffff;
+          color: #1e40af;
         }
         .mobile-menu-btn.scrolled {
-          color: #111827;
+          color: #1e40af;
         }
         .mobile-menu {
           position: absolute;

@@ -131,6 +131,51 @@ export default function LivingConditions() {
             </div>
           </div>
         </div>
+
+        {/* Center Photos Gallery */}
+        <div
+          className="living-gallery"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'all 0.6s ease-out 0.4s',
+          }}
+        >
+          <h3 className="living-gallery-title">Фотографии центра</h3>
+          <div className="living-gallery-grid">
+            {[
+              { src: '/center/center-1.jpg', alt: 'Фото центра 1' },
+              { src: '/center/center-2.jpg', alt: 'Фото центра 2' },
+              { src: '/center/center-3.png', alt: 'Фото центра 3' },
+              { src: '/center/center-4.png', alt: 'Фото центра 4' },
+              { src: '/center/center-5.png', alt: 'Фото центра 5' },
+            ].map((photo, i) => (
+              <div key={i} className="living-gallery-item">
+                <img 
+                  src={photo.src} 
+                  alt={photo.alt}
+                  className="living-gallery-img"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const placeholder = target.parentElement?.querySelector('.living-gallery-placeholder') as HTMLElement;
+                    if (placeholder) placeholder.style.display = 'flex';
+                  }}
+                />
+                <div className="living-gallery-placeholder" style={{ display: 'none' }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span style={{ marginTop: '8px', fontSize: '12px', color: '#64748b' }}>
+                    {photo.alt}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
@@ -149,10 +194,16 @@ export default function LivingConditions() {
         .living-feature-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
         .living-feature-title { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
         .living-feature-desc { font-size: 13px; color: #64748b; line-height: 1.5; }
-        .living-cta-box { padding: 28px; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); border-radius: 20px; }
+        .living-cta-box { padding: 28px; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); border-radius: 20px; }
         .living-cta-title { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
-        .living-cta-text { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
-        .living-cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #ffffff; font-size: 14px; font-weight: 600; border-radius: 10px; text-decoration: none; box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35); }
+        .living-cta-text { font-size: 14px; color: rgba(255,255,255,0.9); margin-bottom: 18px; }
+        .living-cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: #ffffff; color: #2563eb; font-size: 14px; font-weight: 600; border-radius: 10px; text-decoration: none; box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3); }
+        .living-gallery { margin-top: 60px; }
+        .living-gallery-title { font-size: 24px; font-weight: 700; color: #1e40af; margin-bottom: 24px; text-align: center; }
+        .living-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .living-gallery-item { aspect-ratio: 1; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; background: #f8fafc; }
+        .living-gallery-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .living-gallery-img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .living-schedule { padding: 32px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 24px; border: 1px solid #fcd34d; }
         .living-schedule-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
         .living-schedule-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(245, 158, 11, 0.2); display: flex; align-items: center; justify-content: center; }
@@ -194,6 +245,9 @@ export default function LivingConditions() {
           .living-schedule-time { font-size: 12px; min-width: 40px; }
           .living-schedule-activity { font-size: 12px; }
           .living-orb { width: 300px; height: 300px; }
+          .living-gallery { margin-top: 40px; }
+          .living-gallery-title { font-size: 20px; margin-bottom: 20px; }
+          .living-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
         }
       `}</style>
     </section>

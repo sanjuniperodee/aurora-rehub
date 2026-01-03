@@ -6,7 +6,7 @@ const stats = [
   { value: '8', label: 'центров в мире', suffix: '' },
   { value: '500', label: 'выздоровевших', suffix: '+' },
   { value: '24/7', label: 'поддержка', suffix: '' },
-  { value: '98', label: 'эффективность', suffix: '%' },
+  { value: '75', label: 'выздоравливающих', suffix: '%' },
 ];
 
 const features = [
@@ -53,7 +53,7 @@ export default function Hero() {
       style={{
         position: 'relative',
         minHeight: '100vh',
-        background: 'linear-gradient(135deg, #0a0f1a 0%, #1a2744 40%, #0d1829 100%)',
+        background: 'linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #bae6fd 100%)',
         overflow: 'hidden',
       }}
     >
@@ -310,12 +310,12 @@ export default function Hero() {
           align-items: center;
           gap: 10px;
           padding: 10px 20px;
-          background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(96, 165, 250, 0.15) 100%);
           border-radius: 100px;
           border: 1px solid rgba(59, 130, 246, 0.3);
           font-size: 14px;
           font-weight: 600;
-          color: #93c5fd;
+          color: #2563eb;
           margin-bottom: 28px;
           backdrop-filter: blur(10px);
         }
@@ -332,7 +332,7 @@ export default function Hero() {
         .hero-title {
           font-size: clamp(40px, 8vw, 80px);
           font-weight: 800;
-          color: #ffffff;
+          color: #1e40af;
           letter-spacing: -0.03em;
           line-height: 1.05;
           margin-bottom: 28px;
@@ -347,7 +347,7 @@ export default function Hero() {
         
         .hero-description {
           font-size: 18px;
-          color: rgba(255,255,255,0.75);
+          color: #475569;
           line-height: 1.7;
           margin-bottom: 32px;
           max-width: 520px;
@@ -365,11 +365,11 @@ export default function Hero() {
           align-items: center;
           gap: 8px;
           padding: 10px 16px;
-          background: rgba(255,255,255,0.06);
+          background: rgba(255,255,255,0.8);
           border-radius: 100px;
-          border: 1px solid rgba(255,255,255,0.1);
+          border: 1px solid rgba(59, 130, 246, 0.2);
           font-size: 13px;
-          color: rgba(255,255,255,0.8);
+          color: #1e40af;
         }
         
         .hero-cta {
@@ -398,13 +398,13 @@ export default function Hero() {
           align-items: center;
           gap: 10px;
           padding: 16px 28px;
-          background: rgba(255,255,255,0.08);
-          color: #ffffff;
+          background: rgba(255,255,255,0.9);
+          color: #2563eb;
           font-size: 15px;
           font-weight: 600;
           border-radius: 14px;
           text-decoration: none;
-          border: 1px solid rgba(255,255,255,0.15);
+          border: 1px solid rgba(59, 130, 246, 0.3);
           backdrop-filter: blur(10px);
           transition: all 0.3s ease;
         }
@@ -415,11 +415,12 @@ export default function Hero() {
         }
         
         .hero-stats-card {
-          background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%);
+          background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(240, 249, 255, 0.95) 100%);
           border-radius: 28px;
           padding: 32px;
-          border: 1px solid rgba(255,255,255,0.1);
+          border: 1px solid rgba(59, 130, 246, 0.2);
           backdrop-filter: blur(20px);
+          box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
           position: relative;
           overflow: hidden;
           width: 100%;
@@ -457,13 +458,13 @@ export default function Hero() {
         .hero-stats-title {
           font-size: 16px;
           font-weight: 700;
-          color: #ffffff;
+          color: #1e40af;
           margin-bottom: 2px;
         }
         
         .hero-stats-subtitle {
           font-size: 13px;
-          color: rgba(255,255,255,0.5);
+          color: #64748b;
         }
         
         .hero-stats-grid {
@@ -474,15 +475,15 @@ export default function Hero() {
         
         .hero-stat-item {
           padding: 16px;
-          background: rgba(255,255,255,0.05);
+          background: rgba(255,255,255,0.8);
           border-radius: 14px;
-          border: 1px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(59, 130, 246, 0.15);
         }
         
         .hero-stat-value {
           font-size: 28px;
           font-weight: 800;
-          color: #ffffff;
+          color: #1e40af;
           margin-bottom: 4px;
           display: flex;
           align-items: baseline;
@@ -490,18 +491,18 @@ export default function Hero() {
         
         .hero-stat-suffix {
           font-size: 18px;
-          color: #60a5fa;
+          color: #3b82f6;
         }
         
         .hero-stat-label {
           font-size: 12px;
-          color: rgba(255,255,255,0.5);
+          color: #64748b;
         }
         
         .hero-stats-footer {
           margin-top: 20px;
           padding: 16px;
-          background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+          background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
           border-radius: 14px;
           border: 1px solid rgba(16, 185, 129, 0.2);
           display: flex;
@@ -513,7 +514,7 @@ export default function Hero() {
           width: 44px;
           height: 44px;
           border-radius: 12px;
-          background: rgba(16, 185, 129, 0.2);
+          background: rgba(16, 185, 129, 0.15);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -523,13 +524,13 @@ export default function Hero() {
         .hero-stats-footer-title {
           font-size: 14px;
           font-weight: 600;
-          color: #ffffff;
+          color: #1e40af;
           margin-bottom: 2px;
         }
         
         .hero-stats-footer-text {
           font-size: 12px;
-          color: rgba(255,255,255,0.6);
+          color: #64748b;
         }
         
         .hero-scroll-indicator {
@@ -545,7 +546,7 @@ export default function Hero() {
         
         .hero-scroll-indicator span {
           font-size: 13px;
-          color: rgba(255,255,255,0.5);
+          color: #64748b;
         }
         
         .hero-scroll-mouse {

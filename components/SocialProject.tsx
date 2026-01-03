@@ -115,7 +115,7 @@ export default function SocialProject() {
       </div>
 
       <style jsx>{`
-        .social-section { position: relative; padding: 100px 0; background: linear-gradient(180deg, #f8fafc 0%, #0f172a 100%); overflow: hidden; }
+        .social-section { position: relative; padding: 100px 0; background: linear-gradient(180deg, #f8fafc 0%, #e0f2fe 100%); overflow: hidden; }
         .social-orb { position: absolute; border-radius: 50%; filter: blur(80px); }
         .social-orb-1 { top: 20%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%); }
         .social-orb-2 { bottom: 10%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%); }
