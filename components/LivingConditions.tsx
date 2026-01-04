@@ -10,18 +10,29 @@ const features = [
 ];
 
 const schedule = [
-  { time: '07:00', activity: 'Подъём, зарядка' },
-  { time: '08:00', activity: 'Завтрак' },
-  { time: '09:00', activity: 'Групповая терапия' },
-  { time: '11:00', activity: 'Индивидуальная работа' },
-  { time: '13:00', activity: 'Обед' },
-  { time: '14:00', activity: 'Тренинги / Активности' },
-  { time: '16:00', activity: 'Полдник' },
-  { time: '17:00', activity: 'Спорт / Творчество' },
-  { time: '19:00', activity: 'Ужин' },
-  { time: '20:00', activity: 'Вечерняя группа' },
-  { time: '22:00', activity: 'Отбой' },
+  { time: '08:00', activity: 'Подъем' },
+  { time: '08:00 - 08:20', activity: 'Личная гигиена' },
+  { time: '08:20 - 08:30', activity: 'Зарядка (Йога)' },
+  { time: '08:30 - 08:55', activity: 'Уборка дома' },
+  { time: '09:00 - 09:30', activity: 'Завтрак' },
+  { time: '09:30 - 10:00', activity: 'РПЗ' },
+  { time: '10:00 - 12:00', activity: 'Лекция, Видеолекция' },
+  { time: '12:00 - 12:30', activity: 'Разбор обсуждение мероприятия' },
+  { time: '12:30 - 13:00', activity: 'РПЗ' },
+  { time: '13:00 - 13:30', activity: 'Обед' },
+  { time: '13:30 - 15:00', activity: 'Личное время' },
+  { time: '15:00 - 16:00', activity: 'Вычитка основного задания' },
+  { time: '16:00 - 16:30', activity: 'РПЗ' },
+  { time: '16:30 - 17:50', activity: 'ГСП' },
+  { time: '18:00 - 18:30', activity: 'Ужин' },
+  { time: '18:30 - 19:00', activity: 'РПЗ' },
+  { time: '19:00 - 21:00', activity: 'Просмотр фильма' },
+  { time: '21:00 - 21:30', activity: 'РПЗ' },
+  { time: '21:30 - 22:30', activity: 'Итоги дня' },
+  { time: '22:30 - 23:20', activity: 'Личное время' },
+  { time: '23:30', activity: 'Отбой' },
 ];
+
 
 export default function LivingConditions() {
   const [isVisible, setIsVisible] = useState(false);
@@ -211,8 +222,8 @@ export default function LivingConditions() {
         .living-schedule-subtitle { font-size: 13px; color: #a16207; }
         .living-schedule-list { display: flex; flex-direction: column; gap: 6px; }
         .living-schedule-item { display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: rgba(255,255,255,0.6); border-radius: 10px; }
-        .living-schedule-time { font-size: 13px; font-weight: 700; color: #d97706; min-width: 45px; }
-        .living-schedule-activity { font-size: 13px; color: #78350f; }
+        .living-schedule-time { font-size: 12px; font-weight: 700; color: #d97706; min-width: 100px; }
+        .living-schedule-activity { font-size: 12px; color: #78350f; line-height: 1.4; }
         
         @media (max-width: 900px) {
           .living-section { padding: 80px 0; }
@@ -242,8 +253,8 @@ export default function LivingConditions() {
           .living-schedule-title { font-size: 16px; }
           .living-schedule-subtitle { font-size: 12px; }
           .living-schedule-item { padding: 8px 12px; }
-          .living-schedule-time { font-size: 12px; min-width: 40px; }
-          .living-schedule-activity { font-size: 12px; }
+          .living-schedule-time { font-size: 11px; min-width: 90px; }
+          .living-schedule-activity { font-size: 11px; }
           .living-orb { width: 300px; height: 300px; }
           .living-gallery { margin-top: 40px; }
           .living-gallery-title { font-size: 20px; margin-bottom: 20px; }
