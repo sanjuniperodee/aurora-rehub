@@ -84,10 +84,11 @@ export default function FloatingButtons() {
           className="floating-button floating-button-instagram"
           title="Instagram"
         >
-          <img 
-            src="/PHOTO-2026-01-07-12-44-45.jpg" 
-            alt="Instagram"
-          />
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
         </a>
       </div>
 
@@ -146,14 +147,6 @@ export default function FloatingButtons() {
         .floating-button-instagram {
           background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
           color: #ffffff;
-          padding: 0;
-          overflow: hidden;
-        }
-
-        .floating-button-instagram img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
         }
 
         .floating-button-instagram:hover {

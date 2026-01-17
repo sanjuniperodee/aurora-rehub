@@ -29,23 +29,7 @@ export default function Header() {
         {/* Logo */}
         <a href="#" className="header-logo">
           <div className="header-logo-icon">
-            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Diamond shape - dark teal */}
-              <path d="M50 8 L92 50 L50 92 L8 50 Z" fill="#0D9488"/>
-              {/* Letter A in cream/off-white */}
-              <path d="M50 20 L32 70 L38 70 L42 60 L58 60 L62 70 L68 70 L50 20 Z" fill="#F5F5DC"/>
-              <path d="M46 52 L54 52 L50 42 Z" fill="#0D9488"/>
-              {/* Ornamental scrollwork pattern */}
-              <path d="M15 50 Q20 42 25 50 Q20 58 15 50" stroke="#F5F5DC" strokeWidth="2" fill="none" strokeLinecap="round"/>
-              <path d="M85 50 Q80 42 75 50 Q80 58 85 50" stroke="#F5F5DC" strokeWidth="2" fill="none" strokeLinecap="round"/>
-              <path d="M50 15 Q42 20 50 25 Q58 20 50 15" stroke="#F5F5DC" strokeWidth="2" fill="none" strokeLinecap="round"/>
-              <path d="M50 85 Q42 80 50 75 Q58 80 50 85" stroke="#F5F5DC" strokeWidth="2" fill="none" strokeLinecap="round"/>
-              {/* Additional decorative elements */}
-              <circle cx="25" cy="30" r="2" fill="#F5F5DC"/>
-              <circle cx="75" cy="30" r="2" fill="#F5F5DC"/>
-              <circle cx="25" cy="70" r="2" fill="#F5F5DC"/>
-              <circle cx="75" cy="70" r="2" fill="#F5F5DC"/>
-            </svg>
+            <img src="/logo-avrora.jpg" alt="Avrora Nomad" />
           </div>
           <span className={`header-logo-text ${isScrolled ? 'scrolled' : ''}`}>Avrora Nomad</span>
         </a>
