@@ -151,7 +151,7 @@ export default function Packages() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/77053505988"
+                href="https://wa.me/87712466646"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="packages-cta-wa"

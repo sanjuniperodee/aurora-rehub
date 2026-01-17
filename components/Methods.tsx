@@ -5,6 +5,17 @@ import { useEffect, useRef, useState } from 'react';
 const methods = [
   {
     icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 8v8M8 12h8"/>
+      </svg>
+    ),
+    title: 'Обследование в Корейской клинике',
+    description: 'Полный скрининг организма и медикаментозное восстановление с сопровождением врачей высшей категории.',
+    color: '#10b981',
+  },
+  {
+    icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 4.5C10.5 4.5 9.3 5.2 8.5 6.2C7.7 5.7 6.7 5.5 5.7 5.7C4 6.1 2.7 7.7 2.5 9.5C2.3 11.3 3 13 4.5 14"/>
         <path d="M12 4.5C13.5 4.5 14.7 5.2 15.5 6.2C16.3 5.7 17.3 5.5 18.3 5.7C20 6.1 21.3 7.7 21.5 9.5C21.7 11.3 21 13 19.5 14"/>
@@ -31,18 +42,6 @@ const methods = [
     title: 'Работа с аддиктологами',
     description: 'Профессиональное консультирование. Стратегии трезвой жизни.',
     color: '#0ea5e9',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 21L3 14L8 10L12 14L16 8L21 14L16 21"/>
-        <circle cx="18" cy="5" r="2"/>
-        <path d="M8 21H16"/>
-      </svg>
-    ),
-    title: 'Выезды на природу',
-    description: 'Терапевтическое восстановление в горах. Снятие стресса.',
-    color: '#10b981',
   },
   {
     icon: (

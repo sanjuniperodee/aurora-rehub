@@ -23,12 +23,12 @@ export default function FloatingButtons() {
   };
 
   const handleWhatsAppCall = () => {
-    window.open('tel:+77053505988', '_blank');
+    window.open('tel:+87712466646', '_blank');
     setShowWhatsAppMenu(false);
   };
 
   const handleWhatsAppMessage = () => {
-    window.open('https://wa.me/77053505988', '_blank');
+    window.open('https://wa.me/87712466646', '_blank');
     setShowWhatsAppMenu(false);
   };
 
@@ -214,4 +214,5 @@ export default function FloatingButtons() {
     </div>
   );
 }
+
 
