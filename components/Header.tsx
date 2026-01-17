@@ -128,8 +128,8 @@ export default function Header() {
           text-decoration: none;
         }
         .header-logo-icon {
-          width: 64px;
-          height: 64px;
+          width: 128px;
+          height: 128px;
           border-radius: 12px;
           background: transparent;
           display: flex;
