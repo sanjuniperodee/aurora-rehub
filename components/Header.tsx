@@ -31,7 +31,6 @@ export default function Header() {
           <div className="header-logo-icon">
             <img src="/logo-avrora.jpg" alt="Avrora Nomad" />
           </div>
-          <span className={`header-logo-text ${isScrolled ? 'scrolled' : ''}`}>Avrora Nomad</span>
         </a>
 
         {/* Desktop navigation */}
@@ -129,14 +128,19 @@ export default function Header() {
           text-decoration: none;
         }
         .header-logo-icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-          background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+          width: 64px;
+          height: 64px;
+          border-radius: 12px;
+          background: transparent;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+        }
+        .header-logo-icon img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
         }
         .header-logo-icon svg {
           stroke: #ffffff;
@@ -267,16 +271,14 @@ export default function Header() {
             border-radius: 14px;
           }
           .header-logo-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
           }
-          .header-logo-icon svg {
-            width: 18px;
-            height: 18px;
-          }
-          .header-logo-text {
-            font-size: 16px;
+          .header-logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
           }
           .header-logo {
             gap: 10px;
